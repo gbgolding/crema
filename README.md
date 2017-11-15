@@ -1,4 +1,4 @@
-# lncRNA prediction by machine learning classifiers
+# Classifying RNAs by Ensemble Machine learning Algorithms
 
 Classifying transcripts as lncRNAs is difficult because there is no consensus
 on what a lncRNA truly is.
@@ -8,14 +8,14 @@ predict lncRNAs.
 Trained only on true, validated lncRNAs, this method has been tested on plant
 transcriptomes with a high success rate.
 
-See out publication at:
+See our publication at:
 
 
 ## Getting started
 
 To use this tool, simply clone this repository on your machine by:
 ```
-git clone https://github.com/caitsimop/lncRNApredTool.git
+git clone https://github.com/gbgolding/crema.git
 ```
 
 ### Prerequisites
