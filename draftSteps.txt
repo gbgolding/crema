@@ -1,0 +1,26 @@
+Combined steps for predicting lncRNA
+
+input file: transcripts.fa
+output file: output.csv
+    - transcripts, features, ordered by score
+
+## Your data input file should be cleaned of all tRNAs and rRNAs before
+inputting into the tool
+
+## Getting features
+1. CPAT
+cpat.py -g fasta_file.fa -o cpat_file.txt -x ath_hexamer.txt -d ath_logit.RData  
+
+2. Diamond
+diamond blastx -d swissprot.dmnd -q fasta_file.fa -o diamond_output.txt - e 0.001 -k 5 --matrix BLOSUM62 --gapopen 11 --gapextend 1 --more-sensitive -f 6 qseqid pident length qframe qstart qend sstart send evalue bitscore
+
+
+## Run individual GB models
+python3 bin/predict.py -f fasta_file.fa -c cpat_file.txt -d diamond_output.txt
+
+
+## Combined log regression
+files: log_reg_models/log_reg_models.RData
+
+Rscript bin/log_reg.R -m model_predictions_out.csv -t GB 
+# you can also choose RF if you want to compare the different models
