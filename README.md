@@ -40,7 +40,13 @@ Then, you will need to run cpat.py. An example:
 cpat.py -g your_transcript_fasta_file.fa -o cpat_output.txt -x ./cpat_models/ath_hexamer -d ./cpat_models/ath_logit.RData
 ```
 
-Then, DIAMOND:
+Firstly you must create the DIAMOND database from the [SwissProt protein database](http://www.uniprot.org/downloads):
+
+```
+diamond makedb --in uniprot_sprot.fasta -d swissprot.dmnd
+```
+
+Run DIAMOND:
 
 ```
 diamond blastx -d swissprot.dmnd -q your_transcript_fasta_file.fa -o diamond_output.txt -e 0.001 -k 5 --matrix BLOSUM62 --gapopen 11 --gapextend 1 --more-sensitive -f 6 qseqid pident length qframe qstart qend sstart send evalue bitscore
