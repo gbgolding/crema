@@ -49,7 +49,9 @@ diamond makedb --in uniprot_sprot.fasta -d swissprot.dmnd
 Run DIAMOND:
 
 ```
-diamond blastx -d swissprot.dmnd -q your_transcript_fasta_file.fa -o diamond_output.txt -e 0.001 -k 5 --matrix BLOSUM62 --gapopen 11 --gapextend 1 --more-sensitive -f 6 qseqid pident length qframe qstart qend sstart send evalue bitscore
+diamond blastx -d swissprot.dmnd -q your_transcript_fasta_file.fa -o diamond_output.txt \\
+-e 0.001 -k 5 --matrix BLOSUM62 --gapopen 11 --gapextend 1 --more-sensitive \\
+-f 6 qseqid pident length qframe qstart qend sstart send evalue bitscore
 ```
 
 Once you have identified your transcript features using CPAT and DIAMOND, you
