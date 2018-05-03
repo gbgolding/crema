@@ -9,7 +9,7 @@ Trained only on true, validated lncRNAs, this method has been tested on plant
 transcriptomes with a high success rate.
 
 See our publication at:
-
+[Prediction of plant lncRNA by ensemble machine learning classifiers](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4665-2)
 
 ## Getting started
 
