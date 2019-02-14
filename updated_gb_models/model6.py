@@ -61,4 +61,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate= 0.02, subsampl
 clf.fit(X_normalized, y)
 
 # Uncomment to save classifier to pickle
-joblib.dump(clf, '../pickles/model6.pkl')
+joblib.dump(clf, 'model6.pkl')

@@ -20,7 +20,7 @@ mmus_info, mmus_dict, mmus_names = transcript_info_dict("../data/training_files/
 print("imported mouse info")
 atha_info, atha_dict, atha_names = transcript_info_dict("../data/training_files/a_thaliana_random3000.fa", "../data/training_files/a_thaliana_random3000.cpat.txt", "../data/training_files/a_thaliana_random3000.fa.tab")
 
-lncRNA_info, lncRNA_dict, lncRNA_names = trans_info_dict_cc("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab", 'ips1_arabidopsisthaliana_1')
+lncRNA_info, lncRNA_dict, lncRNA_names = transcript_info_dict("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab")
 print("imported lncRNA info")
 
 
@@ -63,4 +63,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate= 0.04, subsampl
 clf.fit(X_normalized, y)
 
 # Uncomment to save classifier as pickle
-joblib.dump(clf, '/model3.pkl')
+joblib.dump(clf, 'model3.pkl')

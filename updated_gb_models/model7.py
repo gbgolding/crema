@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
 import numpy as np
 import csv
-from featuresetup_module import transcript_info, transcript_info_dict, trans_info_dict_cc
+from featuresetup_module import transcript_info, transcript_info_dict
 from sklearn.externals import joblib
 from sklearn import preprocessing
 import datetime
@@ -18,7 +18,7 @@ hsapiens_info,hsapiens_dict,hsapiens_names = transcript_info_dict("../data/train
 print("imported human info")
 atha_info, atha_dict, atha_names = transcript_info_dict("../data/training_files/a_thaliana_random4500.fa", "../data/training_files/a_thaliana_random4500.cpat.txt", "../data/training_files/a_thaliana_random4500.fa.tab")
 
-lncRNA_info, lncRNA_dict, lncRNA_names = trans_info_dict_cc("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab", 'ips1_arabidopsisthaliana_1')
+lncRNA_info, lncRNA_dict, lncRNA_names = transcript_info_dict("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab")
 print("imported lncRNA info")
 
 
@@ -59,4 +59,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate= 0.04, subsampl
 clf.fit(X_normalized, y)
 
 # Uncomment to save classifier as pickle
-joblib.dump(clf, '/pickles/model7.pkl')
+joblib.dump(clf, 'model7.pkl')

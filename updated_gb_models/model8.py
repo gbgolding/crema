@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
 import numpy as np
 import csv
-from featuresetup_model import transcript_info, transcript_info_dict
+from featuresetup_module import transcript_info, transcript_info_dict
 from sklearn.externals import joblib
 from sklearn import preprocessing
 import datetime
@@ -16,13 +16,13 @@ from treeinterpreter import treeinterpreter as ti
 
 hsapiens_info,hsapiens_dict,hsapiens_names = transcript_info_dict("../data/training_files/h_sapiens_random2000.fa", "../data/training_files/h_sapiens_random2000.cpat.txt", "../data/training_files/h_sapiens_random2000.fa.tab")
 print("imported human info")
-mmus_info, mmus_dict, mmus_names = transcript_info_dict("../data/training_files/m_musculis_random1000.fa", "../data/training_files/m_musculis_random1000.cpat.txt", "../data/training_files/m_musculis_random1000.fa.tab")
+mmus_info, mmus_dict, mmus_names = transcript_info_dict("../data/training_files/m_musculus_random1000.fa", "../data/training_files/m_musculus_random1000.cpat.txt", "../data/training_files/m_musculus_random1000.fa.tab")
 print("imported mouse info")
 
 #print("imported rice info")
 atha_info, atha_dict, atha_names = transcript_info_dict("../data/training_files/a_thaliana_random3000.fa", "../data/training_files/a_thaliana_random3000.cpat.txt", "../data/training_files/a_thaliana_random3000.fa.tab")
 print("imported arabidopsis info")
-lncRNA_info, lncRNA_dict, lncRNA_names = trans_info_dict_cc("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab", 'ips1_arabidopsisthaliana_1')
+lncRNA_info, lncRNA_dict, lncRNA_names = transcript_info_dict("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab")
 print("imported lncRNA info")
 
 
@@ -65,4 +65,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate= 0.04, subsampl
 clf.fit(X_normalized, y)
 
 # Uncomment to save classifier as pickle
-joblib.dump(clf, '../pickles/model8.pkl')
+joblib.dump(clf, 'model8.pkl')

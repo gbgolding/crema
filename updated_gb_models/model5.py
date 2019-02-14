@@ -14,9 +14,10 @@ from sklearn.feature_selection import RFECV
 #from collections import Counter
 from treeinterpreter import treeinterpreter as ti
 
-hsapiens_info,hsapiens_dict,hsapiens_names = transcript_info_dict("../data/training_files/old_files/hsapiens_random_3000.fasta", "../data/training_files/old_files/hsapiens_random_3000.fasta.cpat.txt", "../data/training_files/old_files/hsapiens_random_3000.fasta.tab")
+hsapiens_info,hsapiens_dict,hsapiens_names = transcript_info_dict("../data/training_files/hsapiens_random_3000.fasta", "../data/training_files/hsapiens_random_3000.fasta.cpat.txt", "../data/training_files/hsapiens_random_3000.fasta.tab")
 print("imported human info")
-atha_info, atha_dict, atha_names = transcript_info_dict("../data/training_files/old_files/arabidopsis_random_3000.fasta", "../data/training_files/old_files/arabidopsis_random_3000.cpat.txt", "../data/training_files/old_files/arabidopsis_random_3000.fasta.tab")
+atha_info, atha_dict, atha_names = transcript_info_dict("../data/training_files/arabidopsis_random_3000.fasta", "../data/training_files/arabidopsis_random_3000.cpat.txt", "../data/training_files/arabidopsis_random_3000.fasta.tab")
+print("imported arabidopsis info")
 
 lncRNA_info, lncRNA_dict, lncRNA_names = transcript_info_dict("../data/training_files/all_lncRNA_nodup.fa","../data/training_files/all_lncRNA_nodup.humantrained.cpat.txt", "../data/training_files/all_lncRNA_nodup.fa.tab")
 print("imported lncRNA info")
@@ -62,4 +63,4 @@ clf = GradientBoostingClassifier(n_estimators=100, learning_rate= 0.02, subsampl
 clf.fit(X_normalized, y)
 
 # uncomment to save classifier as pickle
-joblib.dump(clf, '../pickles/model5.pkl')
+joblib.dump(clf, 'model5.pkl')
