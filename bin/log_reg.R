@@ -35,9 +35,11 @@ getScriptPath <- function(){
 }
 
 script_dir <- getScriptPath()
-script_dir <- substr(script_dir,1,nchar(script_dir)-3)
+cat("file path relative to current directory", script_dir, "\n")
+script_dir <- substr(script_dir,1,nchar(script_dir)-4)
+cat("path to crema relative to current directory", script_dir, "\n")
 file_path_file <- file.path(script_dir, "log_reg_models", "logit_models.RData")
-
+cat("path to logit_models.RData", file_path_file, "\n")
 load(file_path_file)
 
 predict_new <- function(model_output_csv, gene_names, model_name, model_type){
