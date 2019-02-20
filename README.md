@@ -60,3 +60,31 @@ can run the tool!
 ```
 python3 bin/predict.py -f your_transcript_fasta_file.fa -c cpat_output.txt -d diamond_output.txt
 ```
+
+## Output files
+
+All output files are written to your working directory. Custom output directories to come...
+
+The most helpful output file is `final_ensemble_predictions.csv`.
+The CSV has outputs of both the features used in prediction as well as the lncRNA prediction score and final decision.
+
+The columns describe:
+
+1. gene name
+2. length of transcript
+3. ORF length
+4. GC%
+5. Fickett score (for more info see the CPAT paper)
+6. Hexamer score (for more info see the CPAT paper)
+7. % identity to a hit in the SwissProt database
+8. Alignment length of hit in SwissProt database
+9. Ratio of alignment length to transcript lenth
+10. Ratio of alignment length to ORF length
+11. Score of lncRNA prediction (you can use this to rank your predictions)
+12. Final decision of prediction: 1 == lncRNA
+
+The other files may be less useful to you, depending on what you're looking at.
+
+`all_model_predictions.csv`: how each base model predicted the transcript (1 == lncRNA)
+`all_model_scores.csv`: the lncRNA prediction scores of each transcript for each base model
+`ensemble_logreg_pred.csv`: the raw output of the final logistic regression stacking classifier.
