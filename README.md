@@ -61,6 +61,8 @@ can run the tool!
 python3 bin/predict.py -f your_transcript_fasta_file.fa -c cpat_output.txt -d diamond_output.txt
 ```
 
+Note: if script cannot find `logit_models.RData`, please run `predict.py` using its full file path. This is a known issue that we are working on solving.
+
 ## Output files
 
 All output files are written to your working directory. Custom output directories to come...
