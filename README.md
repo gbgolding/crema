@@ -87,6 +87,6 @@ The columns describe:
 
 The other files may be less useful to you, depending on what you're looking at.
 
-`all_model_predictions.csv`: how each base model predicted the transcript (1 == lncRNA)
-`all_model_scores.csv`: the lncRNA prediction scores of each transcript for each base model
-`ensemble_logreg_pred.csv`: the raw output of the final logistic regression stacking classifier.
+`all_model_predictions.csv`: how each base model predicted the transcript (1 == lncRNA).   
+`all_model_scores.csv`: the lncRNA prediction scores of each transcript for each base model.  
+`ensemble_logreg_pred.csv`: the raw output of the final logistic regression stacking classifier.  
