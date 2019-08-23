@@ -19,6 +19,7 @@ __pycache__
 # testing results code
 testing_results/*
 testing_results
+*.csv
 
 
 # Created by https://www.gitignore.io/api/python
