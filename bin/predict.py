@@ -28,6 +28,8 @@ args = parser.parse_args()
 ## Grab pickles from directory where this file is stored 
 CURRENT_DIR = os.path.dirname(__file__)
 
+#path of the inputfiles
+fasta_path = os.path.dirname(args.trans_fasta)
 
 #os.path.join(CURRENT_DIR+'../gb_models
 clf1 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model1.pkl'))
@@ -68,14 +70,14 @@ for x in model_names:
     probability[model_name] = lnc_score.tolist()
     prediction[model_name] = pred.tolist()
 
-prediction.to_csv("all_model_predictions.csv", sep=",")
-probability.to_csv("all_model_scores.csv", sep=",")
+prediction.to_csv(os.path.join(fasta_path,"all_model_predictions.csv"), sep=",")
+probability.to_csv(os.path.join(fasta_path,"all_model_scores.csv"), sep=",")
 
 
 ## Run logistic regression in R on model scores
 CURRENT_DIR = os.path.dirname(__file__)
 path_to_Rscript = os.path.join(CURRENT_DIR+'/log_reg.R')
-cmnd_to_run = 'Rscript ' + path_to_Rscript + ' -m all_model_predictions.csv -t GB'
+cmnd_to_run = 'Rscript ' + path_to_Rscript + ' -m ' + os.path.join(fasta_path, "all_model_predictions.csv") + ' -t GB'
 os.system(cmnd_to_run)
 
 # empty pandas df 
@@ -85,7 +87,7 @@ os.system(cmnd_to_run)
 # create pandas df with all features and log reg output
 # add to trans_dict?
 
-with open("ensemble_logreg_pred.csv") as pred:
+with open(os.path.join(fasta_path,"ensemble_logreg_pred.csv")) as pred:
     pred_reader = csv.reader(pred, delimiter = ",")
     next(pred_reader) 
     for row in pred_reader:
@@ -104,7 +106,7 @@ feature_df = feature_df[['length', 'ORF', 'GC', 'fickett', 'hexamer', 'identity'
 # count number of predicted lncRNAs:
 lnc_num = sum(x == 1 for x in feature_df['prediction'])
 
-feature_df.to_csv("final_ensemble_predictions.csv", sep=",")
+feature_df.to_csv(os.path.join(fasta_path, "final_ensemble_predictions.csv"), sep=",")
 
 print("Run successful!")
 print("There were " + str(lnc_num) + " lncRNAs predicted from " + args.trans_fasta)
