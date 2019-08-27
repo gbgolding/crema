@@ -21,8 +21,8 @@ def transcript_info_dict(fasta_file, cpat_file, blast_file): #file should be in 
         transcript_dict[name]["length"] = len(record.seq)   
         transcript_dict[name]["GC"] = GC(record.seq)    
         name_list.append(name.lower())
-    with open(cpat_file, "r") as tabular:
-        cpat_reader = csv.reader(tabular, delimiter=("\t"))
+    with open(cpat_file, 'r') as tabular:
+        cpat_reader = csv.reader(tabular, delimiter='\t')
         next(cpat_reader, None) # skip header
         for row in cpat_reader:
             name = row[0]
@@ -45,7 +45,7 @@ def transcript_info_dict(fasta_file, cpat_file, blast_file): #file should be in 
             transcript_dict[gene]["align_perc_ORF"] = 0         
     else:    
         with open(blast_file, "r") as f:
-            tab_reader = csv.reader(f, delimiter=("\t"))    
+            tab_reader = csv.reader(f, delimiter='\t')    
             line_1 = next(tab_reader)
             first = line_1[0]
             score = [float(line_1[9])]

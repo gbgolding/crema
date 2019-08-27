@@ -42,6 +42,8 @@ file_path_file <- file.path(script_dir, "log_reg_models", "logit_models.RData")
 #cat("path to logit_models.RData", file_path_file, "\n")
 load(file_path_file)
 
+outputDir <- normalizePath(dirname(opt$model_pred))
+
 predict_new <- function(model_output_csv, gene_names, model_name, model_type){
     model <- read.csv(model_output_csv, row.names=1)
     geneNames <- rownames(model)
@@ -67,7 +69,7 @@ if (opt$model_type == "GB"){
 
 
 new_predictions <- predict_new(opt$model_pred, opt$gene_name, model_name, opt$model_type)
-file_name <- "ensemble_logreg_pred.csv"
+file_name <- file.path(outputDir,"ensemble_logreg_pred.csv", fsep = "/")
 write.csv(new_predictions, file=file_name)
 
 
