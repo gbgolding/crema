@@ -22,6 +22,7 @@ parser = argparse.ArgumentParser(description="predict lncRNAs from transcript se
 parser.add_argument("-f", "--fasta", dest="trans_fasta", required=True, metavar="transcript.fa", help="fasta file of transcript sequences for prediction")
 parser.add_argument("-c", "--cpat_out", dest="cpat_out", required=True, metavar="cpat_out.csv", help="CPAT output of transcript sequences")
 parser.add_argument("-d", "--diamond_out", dest="diam_out", required=True, metavar="diamond_out.tab", help="Diamond output of transcript sequences")
+parser.add_argument("-s", "--score_cutoff", dest="score_cut", type=float, default=0.5, metavar="s", help="Minimum cutoff score for the lncRNA prediction (Default: 0.5)")
 
 args = parser.parse_args()
 
@@ -95,7 +96,7 @@ with open(os.path.join(fasta_path,"ensemble_logreg_pred.csv")) as pred:
         name = name.lower()
         score = row[1]
         trans_dict[name]["lnc_score"] = score
-        if float(score) >= 0.5:
+        if float(score) >= args.score_cut:
             trans_dict[name]["prediction"] = 1
         else:
             trans_dict[name]["prediction"] = 0  
