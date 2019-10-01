@@ -23,7 +23,7 @@ ruamel.yaml==0.15.88
 scikit-learn==0.20.2
 scipy==1.1.0
 six==1.11.0
-sklearn==0.0
+sklearn==0.20.0
 statsmodels==0.9.0
 treeinterpreter==0.2.2
 urllib3==1.24.1

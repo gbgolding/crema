@@ -24,7 +24,7 @@ To use this tool you will need:
 
 1. python3 
     - [biopython](http://biopython.org/)
-    - [scikit-learn](http://scikit-learn.org)  
+    - [scikit-learn 0.20.0](http://scikit-learn.org)  
 2. [CPAT v1.2.1](http://rna-cpat.sourceforge.net/)
     - python2
 3. [DIAMOND](https://github.com/bbuchfink/diamond)
@@ -76,8 +76,8 @@ The columns describe:
 2. length of transcript
 3. ORF length
 4. GC%
-5. Fickett score (for more info see the CPAT paper)
-6. Hexamer score (for more info see the CPAT paper)
+5. Fickett score (for more info see the [CPAT paper](https://academic.oup.com/nar/article/41/6/e74/2902455))
+6. Hexamer score (for more info see the [CPAT paper](https://academic.oup.com/nar/article/41/6/e74/2902455))
 7. % identity to a hit in the SwissProt database
 8. Alignment length of hit in SwissProt database
 9. Ratio of alignment length to transcript lenth
