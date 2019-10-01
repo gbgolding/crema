@@ -90,3 +90,15 @@ The other files may be less useful to you, depending on what you're looking at.
 `all_model_predictions.csv`: how each base model predicted the transcript (1 == lncRNA).   
 `all_model_scores.csv`: the lncRNA prediction scores of each transcript for each base model.  
 `ensemble_logreg_pred.csv`: the raw output of the final logistic regression stacking classifier.  
+
+## Arguments
+
+```
+Required arguments:
+    -f	input fasta file
+    -c	output file from CPAT run
+    -d	output file from Diamond blastx
+
+Ooptional arguments:
+    -s	minimum lncRNA prediction score (Default: 0.5)
+```
