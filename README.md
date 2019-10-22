@@ -99,6 +99,6 @@ Required arguments:
     -c	output file from CPAT run
     -d	output file from Diamond blastx
 
-Ooptional arguments:
+Optional arguments:
     -s	minimum lncRNA prediction score (Default: 0.5)
 ```
