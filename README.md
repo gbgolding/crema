@@ -11,6 +11,9 @@ transcriptomes with a high success rate.
 See our publication at:
 [Prediction of plant lncRNA by ensemble machine learning classifiers](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4665-2)
 
+If you use CREMA, please cite:
+Simopoulos CMA, Weretilnyk EA, Golding GB. "Prediction of plant lncRNA by ensemble machine learning classifiers." BMC Genomics (2018) doi:110.1186/s12864-018-4665-2
+
 ## Getting started
 
 To use this tool, simply clone this repository on your machine by:
