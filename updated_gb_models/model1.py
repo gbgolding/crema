@@ -6,13 +6,14 @@ from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
 import numpy as np
 import csv
 from featuresetup_module import transcript_info, transcript_info_dict
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
+import joblib
 from sklearn import preprocessing
 import datetime
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.feature_selection import RFECV
 #from collections import Counter
-from treeinterpreter import treeinterpreter as ti
+#from treeinterpreter import treeinterpreter as ti
 import featuresetup_module
 
 
