@@ -27,9 +27,10 @@ To use this tool you will need:
 
 1. python3 
     - [biopython](http://biopython.org/)
-    - [scikit-learn 0.20.0](http://scikit-learn.org)  
+    - [scikit-learn 0.21.3](http://scikit-learn.org)  
 2. [CPAT v1.2.1](http://rna-cpat.sourceforge.net/)
     - python2
+    - *Note: CREMA is not compatible with later versions of CPAT*
 3. [DIAMOND](https://github.com/bbuchfink/diamond)
 
 ## Example
