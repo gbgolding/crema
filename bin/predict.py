@@ -34,14 +34,14 @@ CURRENT_DIR = os.path.dirname(__file__)
 fasta_path = os.path.dirname(args.trans_fasta)
 
 #os.path.join(CURRENT_DIR+'../gb_models
-clf1 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model1.pkl'))
-clf2 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model2.pkl')) 
-clf3 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model3.pkl')) 
-clf4 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model4.pkl')) 
-clf5 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model5.pkl')) 
-clf6 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model6.pkl')) 
-clf7 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model7.pkl')) 
-clf8 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models2/model8.pkl')) 
+clf1 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model1.pkl'))
+clf2 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model2.pkl')) 
+clf3 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model3.pkl')) 
+clf4 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model4.pkl')) 
+clf5 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model5.pkl')) 
+clf6 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model6.pkl')) 
+clf7 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model7.pkl')) 
+clf8 = joblib.load(os.path.join(CURRENT_DIR+'/../updated_gb_models/model8.pkl')) 
 
 trans_info, trans_dict, trans_names = transcript_info_dict(args.trans_fasta, args.cpat_out, args.diam_out)
 
